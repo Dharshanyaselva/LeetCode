@@ -1,13 +1,13 @@
 class Solution:
-    def firstMissingPositive(self, nums: List[int]) -> int:
-        l = len(nums) + 1
-        nums = set(nums)
+    def firstMissingPositive(self, nums: list[int]) -> int:
+       
+        nums.sort()
 
+        smallest = 1
 
-        for num in range(1, l):
-            if num not in nums:
-                return num
-        
+        for num in nums:
+            if num == smallest:
+                smallest += 1
 
-        return l
-        
+        return smallest
+      
